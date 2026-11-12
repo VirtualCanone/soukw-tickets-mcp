@@ -7,6 +7,15 @@ Duas ligações para trabalhar com o Claude (Desktop ou Code) no SouKW 2.0 da KW
 
 Preparado pela equipa SouKW V2 para a Marta e o André.
 
+## Instruções para o Claude
+Se recebeste o link deste repositório, a pessoa quer que a ajudes a instalar estas duas ligações no computador dela. Faz assim:
+1. Clona o repositório para uma pasta local (`git clone https://github.com/VirtualCanone/soukw-tickets-mcp`) ou descarrega o ZIP.
+2. Pergunta qual quer instalar: os tickets do Suporte, o Jira, ou os dois. Pergunta também se usa o Claude Desktop, o Claude Code, ou os dois.
+3. **Tickets:** segue o `mcp-tickets/INSTALAR.md`. No Claude Desktop, é a pessoa que abre o `.mcpb` e cola a chave no formulário. No Claude Code, a chave vai para uma variável de ambiente que a própria pessoa define no terminal.
+4. **Jira:** segue o `jira/GUIA.md`. Copia `jira/skill/jira` para `~/.claude/skills/` e pede à pessoa para correr o `configurar` no terminal dela.
+5. **Nunca peças a chave dos tickets nem o token Atlassian no chat**, e nunca os escrevas em ficheiros deste repositório. Se a pessoa os colar no chat, diz-lhe para os revogar e pedir/criar outros.
+6. No fim, testa: *"Quem sou eu no Suporte do SouKW?"* (tickets) e `jira.py testar` (Jira).
+
 ## O que precisa
 - Claude Desktop e/ou Claude Code.
 - Node.js 20+ (só para usar os tickets no Claude Code; o Claude Desktop não precisa).
