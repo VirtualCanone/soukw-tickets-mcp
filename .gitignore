@@ -1,0 +1,27 @@
+# Segredos: nunca no repositório
+.env
+.env.*
+*.env
+credenciais*.json
+credentials*.json
+*chave*.txt
+*token*.txt
+*.key
+*.pem
+*.pfx
+*.p12
+secrets*
+.secrets/
+.npmrc
+
+# Dependências e artefactos
+node_modules/
+mcp-tickets/dist/preparacao/
+__pycache__/
+*.pyc
+
+# Sistema / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

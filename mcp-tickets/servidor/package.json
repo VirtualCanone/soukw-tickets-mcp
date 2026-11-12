@@ -1,0 +1,24 @@
+{
+  "name": "soukw-tickets-mcp",
+  "version": "0.2.0",
+  "description": "Servidor MCP (stdio) para gerir os tickets do Suporte da SouKWLiderancas a partir do Claude Desktop e do Claude Code.",
+  "private": true,
+  "type": "module",
+  "main": "src/index.js",
+  "bin": { "soukw-tickets-mcp": "src/index.js" },
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test test/*.test.js",
+    "mock": "node test/mock.js",
+    "fumo": "node test/fumo_test.js",
+    "pack": "node scripts/empacotar.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@anthropic-ai/mcpb": "2.1.2"
+  }
+}

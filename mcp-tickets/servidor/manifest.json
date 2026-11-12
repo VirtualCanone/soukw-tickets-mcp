@@ -1,0 +1,45 @@
+{
+  "$schema": "https://raw.githubusercontent.com/anthropics/mcpb/main/dist/mcpb-manifest-v0.3.schema.json",
+  "manifest_version": "0.3",
+  "name": "soukw-tickets",
+  "display_name": "SouKW Tickets do Suporte",
+  "version": "0.2.0",
+  "description": "Ler, responder e gerir os tickets do Suporte do SouKW (KW Portugal) a partir do Claude.",
+  "long_description": "Liga o Claude aos tickets do Suporte da SouKWLiderancas. Todas as acções (listar, ver, comentar, mudar estado, atribuir, escalar) são feitas em nome do dono da chave pessoal, com o mesmo acesso que tem nos ecrãs do Suporte.",
+  "author": { "name": "KW Portugal - equipa SouKW V2" },
+  "server": {
+    "type": "node",
+    "entry_point": "src/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/src/index.js"],
+      "env": {
+        "TICKETSMCP_URL": "${user_config.url}",
+        "TICKETSMCP_CHAVE": "${user_config.chave}"
+      }
+    }
+  },
+  "user_config": {
+    "url": {
+      "type": "string",
+      "title": "Endereço do SouKW",
+      "description": "Endereço do serviço de tickets (termina em /SouKWLiderancas/rest/TicketsMCP). Use o que lhe foi indicado pela equipa SouKW.",
+      "required": true,
+      "default": "https://kwportugal.outsystems.app/SouKWLiderancas/rest/TicketsMCP"
+    },
+    "chave": {
+      "type": "string",
+      "title": "Chave pessoal",
+      "description": "A sua chave pessoal de acesso aos tickets. Não a partilhe: as acções ficam registadas em seu nome.",
+      "required": true,
+      "sensitive": true
+    }
+  },
+  "tools": [],
+  "compatibility": {
+    "platforms": ["win32", "darwin"],
+    "runtimes": { "node": ">=20.0.0" }
+  },
+  "keywords": ["soukw", "kw portugal", "suporte", "tickets"],
+  "license": "UNLICENSED"
+}
